@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="NetBeansProjects">
-            <file>file:/D:/Documents/My%20Cloud%20Drive/NetBeansProjects/Project1_AW/web/AddProduct.jsp</file>
-            <file>file:/D:/Documents/My%20Cloud%20Drive/NetBeansProjects/Project1_AW/web/index.html</file>
+            <file>file:/D:/Documents/My%20Cloud%20Drive/NetBeansProjects/Project1_AW/web/BrowseAppliance.jsp</file>
             <file>file:/D:/Documents/My%20Cloud%20Drive/NetBeansProjects/Project1_AW/src/java/servletClasses/ProcessAddProduct.java</file>
+            <file>file:/D:/Documents/My%20Cloud%20Drive/NetBeansProjects/Project1_AW/src/java/servletClasses/ProcessBrowseAppliance.java</file>
+            <file>file:/D:/Documents/My%20Cloud%20Drive/NetBeansProjects/Project1_AW/web/WEB-INF/web.xml</file>
         </group>
     </open-files>
 </project-private>

@@ -12,23 +12,30 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello 
-            <%String type = request.getParameter("type");
-            String model = request.getParameter("model");
-            String year = request.getParameter("year");
-            String manufacturer = request.getParameter("manufacturer");
-            String description = request.getParameter("description");
-            String count = request.getParameter("count");
-            String pricePerUnit = request.getParameter("pricePerUnit");
-                out.println(type);
-                out.println(model);
-                out.println(year);
-                out.println(manufacturer);
-                out.println(description);
-                out.println(count);
-                out.println(pricePerUnit);
-            %>
-        </h1>
-        
+        <%@ include file="navBar.jsp" %>
+         <form action="/Project1_AW/add-product" method="POST">
+                <label>type:</label>
+                <input type="text" name="type">
+                <br>
+                <label>model: </label>
+                <input type="text" name="model">
+                <br>
+                <label>year: </label>
+                <input type="text" name="year">
+                <br>
+                <label>manufacturer: </label>
+                <input type="text" name="manufacturer">
+                <br>
+                <label>description: </label>
+                <input type="text" name="description">
+                <br>
+                <label>count: </label>
+                <input type="text" name="count">
+                <br>
+                <label>PRICE PER UNIT: </label>
+                <input type="text" name="pricePerUnit">
+                <button type="submit">submit</button>
+            </form>
+         <%@ include file="footer.jsp" %>
     </body>
 </html>
