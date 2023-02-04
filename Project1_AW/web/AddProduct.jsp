@@ -8,35 +8,35 @@
 
     <div class="formContainer flex">
       <div class="fromWrapper card">
-        <form class="addProdcutForm" action="add-product" method="POST">
+        <form id="ProdcutForm" class="addProdcutForm" action="add-product" method="POST">
           <div class="flex"><h1>Add an appliance</h1></div>
-          <label>type:</label>
+          <label>type: <span id="typeMsg" class="error"></span></label>
           <br />
-          <input type="text" name="type" />
+          <input id="typeInput" type="text" name="type" />
           <br />
-          <label>model: </label>
+          <label>model: <span id="modelMsg" class="error"></span></label>
           <br />
-          <input type="text" name="model" />
+          <input id="modelInput" type="text" name="model" />
           <br />
-          <label>year: </label>
+          <label>year: <span id="yearMsg" class="error"></span></label>
           <br />
-          <input type="year" name="year" />
+          <input id="yearInput" type="year" name="year" />
           <br />
-          <label>manufacturer: </label>
+          <label>manufacturer: <span id="manufacturerMsg" class="error"></span></label>
           <br />
-          <input type="text" name="manufacturer" />
+          <input id="manufacturerInput" type="text" name="manufacturer" />
           <br />
-          <label>description: </label>
+          <label>description: <span id="descriptionMsg" class="error"></span></label>
           <br />
-          <input type="text" name="description" />
+          <input id="descriptionInput" type="text" name="description" />
           <br />
-          <label>count: </label>
+          <label>count: <span id="countMsg" class="error"></span></label>
           <br />
-          <input type="text" name="count" />
+          <input id="countInput" type="text" name="count" />
           <br />
-          <label>price: </label>
+          <label>price: <span id="priceMsg" class="error"></span></label>
           <br />
-          <input type="text" name="pricePerUnit" />
+          <input id="priceInput" type="text" name="pricePerUnit" />
           <br />
           <div class="flex">
             <button class="actionButton formButton" type="submit">submit</button>

@@ -28,9 +28,11 @@
                 out.println("<th>Type</th>");
                 out.println(" <th>Model</th>");
                 out.println("<th>Year</th>");
+                out.println("<th>manufacturer</th>");
+                out.println("<th>description</th>");
                 out.println("<th>Count</th>");
                 out.println("<th>Price</th>");
-                out.println("<th>DateTime</th>");
+                out.println("<th>registration date</th>");
                 out.println("</tr>");
                     while (rs.next()) {
                         //create table to display data
