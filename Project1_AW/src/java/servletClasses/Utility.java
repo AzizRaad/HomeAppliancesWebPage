@@ -25,7 +25,11 @@ public class Utility {
     
     // This Method is responsible to create connection to the datanase whenever needed 
     public static Connection getConn() throws SQLException, IOException, ClassNotFoundException {
-        Class.forName("com.mysql.jdbc.Driver");
+        String DB_URL = "jdbc:mysql://bdwyaxuoiy38wddwtdxs-mysql.services.clever-cloud.com/bdwyaxuoiy38wddwtdxs";
+        String USER = "uewldxfzpbauu3nf";
+        String PASSWORD = "vTJ5cQWE1Wv9aRo0z0ZT";
+        String JDBC_DRIVER = "com.mysql.jdbc.Driver"; 
+        Class.forName(JDBC_DRIVER);
     return DriverManager.getConnection(DB_URL, USER, PASSWORD);
     }
 }
