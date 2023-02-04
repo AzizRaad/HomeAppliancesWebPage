@@ -14,18 +14,24 @@ pageCount++;
 <% addCount(); %>--%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <nav>
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="http://localhost:8082/Project1_AW/AddProduct.jsp">Add Home Appliance</a></li>
-                <li><a href="http://localhost:8082/Project1_AW/AddFeedback.jsp">Add Feedback</a></li>
-                <li><a href="http://localhost:8082/Project1_AW/BrowseAppliance.jsp">Browse Home Appliances</a></li>
-            </ul>
-        </nav>
-    </body>
-</html>
+  <head>
+    <title>Home Appliances</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js"></script>
+  </head>
+  <body>
+    <nav class="flex">
+      <div class="logoContainer">
+        <a href="/Project1_AW">
+          <div class="logoImg"></div>
+        </a>
+      </div>
+      <ul class="flex navgation">
+        <li><a class="selected" href="index.html">HOME</a></li>
+        <li><a href="AddProduct">ADD APPLIANCES</a></li>
+        <li><a href="BrowseAppliance">BROWSE APPLIANCES</a></li>
+        <li><a href="AddFeedback">ADD FEEDBACK</a></li>
+      </ul>
+    </nav>

@@ -1,0 +1,217 @@
+:root {
+  --white: #f5f5f5;
+  --red: #ff5a5f;
+  --grey: lightgrey;
+  --secondary: #03c988;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body nav {
+  background-color: var(--red);
+  padding: 0.5%;
+  height: 12vh;
+}
+body nav .navgation {
+  width: 60%;
+  justify-content: space-between;
+  list-style: none;
+  padding-right: 1%;
+}
+
+.logoContainer {
+  width: 40%;
+  height: 100%;
+}
+
+.logoImg {
+  height: 100%;
+  background-image: url(../images/logo.png);
+  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+nav ul {
+  height: 100%;
+}
+
+nav ul li {
+  cursor: pointer;
+  transition-duration: 500ms;
+}
+
+nav ul li:hover {
+  color: var(--white);
+  transform: scale(1.1);
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--grey);
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+nav ul li a.selected {
+  color: var(--white);
+  border-bottom: 2px var(--white) solid;
+}
+
+nav ul li a:hover {
+  color: var(--white);
+}
+
+.heroContainer {
+  height: 88vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../images/hero.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.heroText {
+  color: white;
+  font-size: 4rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 5%;
+}
+.heroText span {
+  color: var(--red);
+}
+.heroText a {
+  width: 20%;
+  height: 15%;
+}
+.actionButton {
+  margin-top: 2%;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--red);
+  color: var(--white);
+  font-size: 1.8rem;
+  border: none;
+  transition-duration: 500ms;
+  cursor: pointer;
+}
+.actionButton:hover {
+  box-shadow: 0px 10px 50px var(--red);
+  transform: translateY(-5px);
+  transform: scale(1.1);
+}
+
+.content {
+  flex-direction: column;
+  margin: 3%;
+}
+
+.teamContainer {
+  width: 80%;
+  height: fit-content;
+  border-top: 25px var(--red) solid;
+  border-radius: 25px;
+  flex-direction: column;
+  padding: 2%;
+  background-color: lightgrey;
+  margin-top: 1%;
+}
+.team {
+  margin-top: 3%;
+  justify-content: space-evenly;
+  width: 100%;
+  align-items: stretch;
+}
+.card {
+  border-top: var(--red) 10px solid;
+  border-radius: 25px;
+  width: 35%;
+  overflow: hidden;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.8);
+  background-color: var(--white);
+}
+.card h2,
+.card title,
+.card p {
+  margin: 4%;
+}
+
+.card h2 {
+  font-size: 2rem;
+}
+
+.card title,
+.card p {
+  font-size: 1.5rem;
+}
+
+.title {
+  color: grey;
+}
+
+.perosnalImage {
+  width: 100%;
+  height: auto;
+}
+
+/* here wtart the add product page */
+
+.formContainer {
+  width: 100%;
+  height: 50%;
+}
+
+.fromWrapper {
+  margin: 2.5%;
+  width: 70%;
+  height: auto;
+}
+form {
+  width: 100%;
+  padding: 2% 5%;
+}
+.addProdcutForm label {
+  display: inline-block;
+  font-size: 2rem;
+  margin-top: 3%;
+  width: 30%;
+}
+.addProdcutForm input, .addProdcutForm textarea  {
+  width: 100%;
+  margin-top: 1%;
+  font-size: 1.5rem;
+  resize: none;
+}
+
+.addProdcutForm .formButton {
+  padding: 3%;
+  width: 25%;
+  margin-top: 5%;
+}
+
+footer {
+  background-color: var(--red);
+  color: var(--white);
+  font-size: 2rem;
+  padding: 1%;
+  margin-top: auto;
+}

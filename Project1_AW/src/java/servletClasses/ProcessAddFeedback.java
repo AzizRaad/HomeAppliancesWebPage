@@ -63,4 +63,9 @@ public class ProcessAddFeedback extends HttpServlet{
             System.out.println(ex);
         }// end of catch
     }// The end of doPOST method
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        request.getRequestDispatcher("navBar.jsp").include(request, response);
+        
+    }// The end of doPOST method
 }// End of class

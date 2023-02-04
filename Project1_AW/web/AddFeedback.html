@@ -1,0 +1,64 @@
+<!-- <%-- 
+    Document   : AddFeedback
+    Created on : Feb 1, 2023, 10:53:31 AM
+    Author     : Aziz
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%> -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home Appliances</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js"></script>
+  </head>
+  <body>
+    <nav class="flex">
+      <div class="logoContainer">
+        <a href="/Project1_AW">
+          <div class="logoImg"></div>
+        </a>
+      </div>
+      <ul class="flex navgation">
+        <li><a class="selected" href="index.html">HOME</a></li>
+        <li><a href="AddProduct">ADD APPLIANCES</a></li>
+        <li><a href="BrowseAppliance">BROWSE APPLIANCES</a></li>
+        <li><a href="AddFeedback">ADD FEEDBACK</a></li>
+      </ul>
+    </nav>
+    <!-- <%@ include file="navBar.jsp" %> -->
+    <div class="formContainer flex">
+      <div class="fromWrapper card">
+        <form class="addProdcutForm" action="add-feedback" method="POST">
+          <label>name:</label>
+          <input type="text" name="fname" />
+          <br />
+          <label>email: </label>
+          <input type="text" name="email" />
+          <br />
+          <label>Phone Number </label>
+          <input type="text" name="phonenumber" />
+          <br />
+          <label>Request Type </label>
+          <input type="text" name="requesttype" />
+          <br />
+          <label>subject: </label>
+          <input type="text" name="subject" />
+          <br />
+          <label>Message </label>
+          <textarea maxlength="250" rows="5" type="text" name="message" ></textarea>
+          <br />
+          <div class="flex">
+            <button class="actionButton formButton" type="submit">submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- <%@ include file="footer.jsp" %> -->
+    <footer class="flex">
+      <p>Copyright &copy; All Rights Reserved To HomeApps.inc</p>
+    </footer>
+  </body>
+</html>
