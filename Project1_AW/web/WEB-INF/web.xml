@@ -8,6 +8,10 @@
         <servlet-name>processAddFeedback</servlet-name>
         <servlet-class>servletClasses.ProcessAddFeedback</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>processBrowseAppliance</servlet-name>
+        <servlet-class>servletClasses.ProcessBrowseAppliance</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>processAddProduct</servlet-name>
         <url-pattern>/add-product</url-pattern>
@@ -16,9 +20,16 @@
         <servlet-name>processAddFeedback</servlet-name>
         <url-pattern>/add-feedback</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>processBrowseAppliance</servlet-name>
+        <url-pattern>/browse-appliance</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
 </web-app>

@@ -4,27 +4,72 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Home Appliances</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>
-             <nav>
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="http://localhost:8082/Project1_AW/AddProduct.jsp">Add Home Appliance</a></li>
-                <li><a href="http://localhost:8082/Project1_AW/AddFeedback.jsp">Add Feedback</a></li>
-                <li><a href="http://localhost:8082/Project1_AW/BrowseAppliance.jsp">Browse Home Appliances</a></li>
-            </ul>
-        </nav>
-            <h1>starting the project from here</h1>
-           
+  <head>
+    <title>Home Appliances</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js"></script>
+  </head>
+  <body>
+    <nav class="flex">
+      <div class="logoContainer">
+        <a href="/Project1_AW">
+          <div class="logoImg"></div>
+        </a>
+      </div>
+      <ul class="flex navgation">
+        <li><a class="selected" href="index.html">HOME</a></li>
+        <li><a href="add-product">ADD APPLIANCES</a></li>
+        <li><a href="browse-appliance">BROWSE APPLIANCES</a></li>
+        <li><a href="add-feedback">ADD FEEDBACK</a></li>
+      </ul>
+    </nav>
+
+    <div class="heroContainer">
+      <div class="heroText">
+        <p>
+          your house needs
+          <br />
+          in <span>ONE</span> place.
+        </p>
+        <a href="index.html"><button class="actionButton">BUY NOW</button></a>
+      </div>
+    </div>
+    <div class="content flex">
+      <h1>Our Team</h1>
+      <div class="teamContainer flex">
+        <div class="team flex">
+          <div class="card">
+            <img
+              class="perosnalImage"
+              src="./images/abdulaziz.jpg"
+              alt="abudlaziz bahmeed"
+            />
+            <h2>Abdulaziz Bahmeed</h2>
+            <p class="title">CTO & Co-Founder</p>
+            <p>software developer and bussniness enthusiastic.</p>
+            <p>Bahmeed@HomeApps.com</p>
+          </div>
+          <div class="card">
+            <img
+              class="perosnalImage"
+              src="./images/alamoudi.jpg"
+              alt="abudlaziz alamoudi"
+            />
+            <h2>Abdulaziz Alamoudi</h2>
+            <p class="title">CEO & Co-Founder</p>
+            <p>software developer and designer.</p>
+            <p>Alamoudi@HomeApps.com</p>
+          </div>
         </div>
-        <footer>
-            <p> Copyright &copy; All Rights Reserved To AB Appliances  </p>
-        </footer>
-    </body>
+      </div>
+    </div>
+
+    <footer class="flex">
+      <p>Copyright &copy; All Rights Reserved To HomeApps.inc</p>
+    </footer>
+  </body>
 </html>

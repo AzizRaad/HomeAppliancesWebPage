@@ -33,69 +33,10 @@ public class ProcessBrowseAppliance extends HttpServlet {
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        try {
+        request.getRequestDispatcher("navBar.jsp").include(request, response);
+        request.getRequestDispatcher("BrowseAppliance.jsp").include(request, response);
+        request.getRequestDispatcher("footer.jsp").include(request, response);
 
-            //print eb page by print HTML tah
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<link rel=\"stylesheet\" href=\"css/style.css\" type=\"text/css\"/>");
-            out.println("<title>show Appliances records</title>");
-            out.println("</head>");
-            out.println("<body>");
-            request.getRequestDispatcher("navBar.jsp").include(request, response);
-            out.println("<div class=\"table--container\">");
-
-            String sql = "select * from Apartments";
-            PreparedStatement statement = Utility.getConn().prepareStatement(sql);
-            
-            ResultSet rs = statement.executeQuery();
-
-            if (!rs.isBeforeFirst()) { // if nothing in DB
-                out.println("<p> No registration records in database! </p>");
-            } else {
-                out.println("<table>");
-                out.println("<tr class=\"thead\">");
-                out.println(" <th>ID</th>");
-                out.println("<th>Type</th>");
-                out.println(" <th>Model</th>");
-                out.println("<th>Year</th>");
-                out.println("<th>Count</th>");
-                out.println("<th>Price</th>");
-                out.println("<th>DateTime</th>");
-                out.println("</tr>");
-                while (rs.next()) {
-                    //create table to display data
-                    out.println("<tr>");
-                    out.println("<td>" + rs.getInt(1) + "</td>");
-                    out.println("<td>" + rs.getString(2) + "</td>");
-                    out.println("<td>" + rs.getString(3) + "</td>");
-                    out.println("<td>" + rs.getString(4).substring(0, 4) + "</td>");
-                    out.println("<td>" + rs.getInt(7) + "</td>");
-                    out.println("<td>" + rs.getDouble(8) + "</td>");
-                    out.println("<td>" + rs.getTimestamp(9) + "</td>");
-                    out.println("</tr>");
-                }
-
-                out.println("</table>");
-            }
-
-            out.println("</div>");
-
-        } catch (Exception ex) {
-            //throw new ServletException(ex);
-            out.println("<p class=\"wrong-masg\"> There was an error exception meesage: " + ex + "</p>");
-            out.println("</div>");
-            out.println("</div>");
-
-            out.println("</body>");
-            out.println("</html>");
-        } finally {
-            out.close();
-        }
-
-    }
+    }// The end of doGET method
     
 }// End of Class
