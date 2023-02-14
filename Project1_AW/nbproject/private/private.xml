@@ -9,19 +9,8 @@
             <file>file:/D:/Documents/My%20Cloud%20Drive/NetBeansProjects/Project1_AW/web/WEB-INF/web.xml</file>
         </group>
         <group>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/HomeAppliancesWebPage/Project1_AW/src/java/servletClasses/ProcessAddFeedback.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/HomeAppliancesWebPage/Project1_AW/web/footer.jsp</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/HomeAppliancesWebPage/Project1_AW/web/AddProduct.jsp</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/HomeAppliancesWebPage/Project1_AW/web/index.html</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/HomeAppliancesWebPage/Project1_AW/web/css/style.css</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/HomeAppliancesWebPage/Project1_AW/src/java/servletClasses/ProcessAddProduct.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/HomeAppliancesWebPage/Project1_AW/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/HomeAppliancesWebPage/Project1_AW/src/java/servletClasses/ProcessBrowseAppliance.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/HomeAppliancesWebPage/Project1_AW/web/navBar.jsp</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/HomeAppliancesWebPage/Project1_AW/src/java/servletClasses/Utility.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/HomeAppliancesWebPage/Project1_AW/web/BrowseAppliance.jsp</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/HomeAppliancesWebPage/Project1_AW/web/register.jsp</file>
             <file>file:/C:/Users/DELL/Documents/NetBeansProjects/HomeAppliancesWebPage/Project1_AW/web/js/script.js</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/HomeAppliancesWebPage/Project1_AW/web/AddFeedback.jsp</file>
         </group>
     </open-files>
 </project-private>

@@ -12,6 +12,10 @@
         <servlet-name>processBrowseAppliance</servlet-name>
         <servlet-class>servletClasses.ProcessBrowseAppliance</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProcessRegister</servlet-name>
+        <servlet-class>servletClasses.ProcessRegister</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>processAddProduct</servlet-name>
         <url-pattern>/add-product</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>processBrowseAppliance</servlet-name>
         <url-pattern>/browse-appliance</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcessRegister</servlet-name>
+        <url-pattern>/register</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
