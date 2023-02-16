@@ -208,6 +208,16 @@ form {
   width: 25%;
   margin-top: 5%;
 }
+
+.accountLabel{
+    display: inline-block;
+    margin-top: 1%;
+}
+
+.accountLabel a{
+    color: var(--red);
+    text-decoration:none;
+}
 /* here is the browse appliances */
 
 .tableContainer{

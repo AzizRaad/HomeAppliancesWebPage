@@ -15,6 +15,17 @@
         return "";
     }
 %>
+
+<%!
+// a method to check is the user is looged in or no
+    String isLogged(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        session.getAttribute("logged");
+        if(session.getAttribute("logged").equals("true"))
+        return "LOGOUT";
+        else return "LOGIN";
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,9 +43,10 @@
                 </a>
             </div>
             <ul class="flex navgation">
-                <li><a class="<% out.print(checkPage(request, "/Project1_AW/")); %>" href="index.html">HOME</a></li>
+                <li><a class="<% out.print(checkPage(request, "/Project1_AW/")); %>" href="/Project1_AW/">HOME</a></li>
                 <li><a class="<% out.print(checkPage(request, "/Project1_AW/add-product")); %>" href="add-product">ADD APPLIANCES</a></li>
                 <li><a class="<% out.print(checkPage(request, "/Project1_AW/browse-appliance")); %>" href="browse-appliance">BROWSE APPLIANCES</a></li>
                 <li><a class="<% out.print(checkPage(request, "/Project1_AW/add-feedback"));%>" href="add-feedback">ADD FEEDBACK</a></li>
+                <li><a class="<% out.print(checkPage(request, "/Project1_AW/login"));%>" href="login"><% out.print(isLogged(request));%></a></li>
             </ul>
         </nav>

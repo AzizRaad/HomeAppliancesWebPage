@@ -216,6 +216,9 @@ function validateRegister() {
 
     const passwordInput = document.getElementById("passwordInput");
     const passwordMsg = document.getElementById("passwordMsg");
+    
+    const repaetPasswordInput = document.getElementById("repaetPasswordInput");
+    const repaetPasswordMsg = document.getElementById("repaetPasswordMsg");
 
     // here we check name must consist 3-50 letters only
     if (nameInput.value.search(/^[A-Za-z'\-\._ ]{3,50}$/) !== 0) {
@@ -249,15 +252,12 @@ function validateRegister() {
         passwordMsg.innerHTML = "";
         passwordMsg.style.display = "none";
     }
-
-    const repaetPasswordInput = document.getElementById("repaetPasswordInput");
-    const repaetPasswordMsg = document.getElementById("repaetPasswordMsg");
     
     // here we check the if the passwords area matched
     if (passwordInput.value !== repaetPasswordInput.value) {
         isValid = false;
         repaetPasswordMsg.innerHTML =
-                "ERROR: he second password does not match the first password";
+                "ERROR: the second password does not match the first password";
         repaetPasswordMsg.style.display = "inline";
     } else {
         repaetPasswordMsg.innerHTML = "";
@@ -272,4 +272,46 @@ if (regsiterForm)
         e.preventDefault();
         if (validateRegister())
             regsiterForm.submit();
+    });
+
+
+function validateLogin() {
+    let isValid = true;
+
+    const emailInput = document.getElementById("emailInput");
+    const emailMsg = document.getElementById("emailMsg");
+
+    const passwordInput = document.getElementById("passwordInput");
+    const passwordMsg = document.getElementById("passwordMsg");
+
+    // here we check email less than 50
+    if (!emailInput.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+        isValid = false;
+        emailMsg.innerHTML =
+                "ERROR: Provide a correct email address ! and most be Less than 51 characters";
+        emailMsg.style.display = "inline";
+    } else {
+        emailMsg.innerHTML = "";
+        emailMsg.style.display = "none";
+    }
+    
+    // here we check the validity of the password
+    if (passwordInput.value.length <= 7) {
+        isValid = false;
+        passwordMsg.innerHTML =
+                "ERROR: Provide a correct password with at least 8 characters";
+        passwordMsg.style.display = "inline";
+    } else {
+        passwordMsg.innerHTML = "";
+        passwordMsg.style.display = "none";
+    }
+
+    return isValid;
+}
+const loginForm = document.getElementById("loginForm");
+if (loginForm)
+    loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (validateLogin())
+            loginForm.submit();
     });

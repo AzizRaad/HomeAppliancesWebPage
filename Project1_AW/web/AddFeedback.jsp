@@ -10,8 +10,8 @@
     <div class="fromWrapper card">
         <form id="feedbackForm" class="addProdcutForm" action="add-feedback" method="POST">
             <div class="flex"><h1>Send us your feedback!!</h1></div>
-            <label>name: <span id="nameInput" class="error"></span></label>
-            <input id="namInput" type="text" name="fname" />
+            <label>name: <span id="nameMsg" class="error"></span></label>
+            <input id="nameInput" type="text" name="fname" />
             <br />
             <label>email: <span id="emailMsg" class="error"></span></label>
             <input id="emailInput" type="text" name="email" />
@@ -34,4 +34,5 @@
         </form>
     </div>
 </div>
+<jsp:include page="footer.jsp" />
 

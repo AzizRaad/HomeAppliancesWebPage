@@ -1,33 +1,12 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Home Appliances</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <script src="./js/script.js"></script>
-  </head>
-  <body>
-    <nav class="flex">
-      <div class="logoContainer">
-        <a href="/Project1_AW">
-          <div class="logoImg"></div>
-        </a>
-      </div>
-      <ul class="flex navgation">
-        <li><a class="selected" href="index.html">HOME</a></li>
-        <li><a href="add-product">ADD APPLIANCES</a></li>
-        <li><a href="browse-appliance">BROWSE APPLIANCES</a></li>
-        <li><a href="add-feedback">ADD FEEDBACK</a></li>
-      </ul>
-    </nav>
+<%-- 
+    Document   : index
+    Created on : Feb 16, 2023, 5:06:37 PM
+    Author     : aahba
+--%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<jsp:include page="navBar.jsp" />
     <div class="heroContainer">
       <div class="heroText">
         <p>
@@ -68,8 +47,4 @@ and open the template in the editor.
       </div>
     </div>
 
-    <footer class="flex">
-      <p>Copyright &copy; All Rights Reserved To HomeApps.inc</p>
-    </footer>
-  </body>
-</html>
+<jsp:include page="footer.jsp" />

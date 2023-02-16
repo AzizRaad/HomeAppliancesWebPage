@@ -13,19 +13,10 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author DELL
+ * @author aahba
  */
-public class ProcessRegister extends HttpServlet {
+public class ProcessLogin extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -40,12 +31,13 @@ public class ProcessRegister extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         boolean isLogged = session.getAttribute("logged").equals("true");
+        
         if (isLogged) {
             session.setAttribute("logged", "false");
             response.sendRedirect("/Project1_AW/");
         } else {
             request.getRequestDispatcher("navBar.jsp").include(request, response);
-            request.getRequestDispatcher("register.jsp").include(request, response);
+            request.getRequestDispatcher("login.jsp").include(request, response);
         }
     }
 
@@ -60,42 +52,34 @@ public class ProcessRegister extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String fullName = request.getParameter("fullName");
+        
+        HttpSession session = request.getSession();
+        boolean isLogged = session.getAttribute("logged").equals("true");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        
+
         try {
             //create the blank SQL statment
-            String serchQuerey = "select UserName from Users where UserName = ?;";
+            String serchQuerey = "select UserName from Users where UserName = ? and Password = ?;";
             Connection connection = Utility.getConn();
             PreparedStatement statement = connection.prepareStatement(serchQuerey);
             //now we fill the stament with the parametrs we got from the usre
             statement.setString(1, email);
+            statement.setString(2, password);
             ResultSet result = statement.executeQuery();
 
-            //here we check if this is a new user in the databsae
+            //here we check there is a suer with this emial and password
             if (!result.isBeforeFirst()) {
-                //create the blank SQL statment
-                String insertquery = "insert into Users(FullName,UserName,Password,CreationDataTime) "
-                        + "values(?,?,?,now());";
-                statement = connection.prepareStatement(insertquery);
-                //now we fill the stament with the parametrs we got from the usre
-                statement.setString(1, fullName);
-                statement.setString(2, email);
-                statement.setString(3, password);
-                statement.executeUpdate();
-                connection.close();
-                statement.close();
-                //here we redircet the user to the login page after sign the sessions with logged attribute
-                HttpSession session = request.getSession();
+
+                //here we redircet the user to home page after sign the sessions with logged attribute
                 session.setAttribute("logged", "true");
                 response.sendRedirect("/Project1_AW/");
             } else {
                 //we return that there already a user with that email
                 request.getRequestDispatcher("navBar.jsp").include(request, response);
                 PrintWriter out = response.getWriter();
-                out.println("<p class='error infoMsg'> There is already a user registred with this email</p>");
-                request.getRequestDispatcher("register.jsp").include(request, response);
+                out.println("<p class='error infoMsg'> the email or password is wrong</p>");
+                request.getRequestDispatcher("login.jsp").include(request, response);
             }
 
         } catch (Exception ex) {//here we rerturnthe smae page with informative error messaeg
@@ -103,7 +87,6 @@ public class ProcessRegister extends HttpServlet {
             PrintWriter out = response.getWriter();
             out.println("<p class='error infoMsg'> There was an error exception meesage: " + ex + "</p>");
             request.getRequestDispatcher("register.jsp").include(request, response);
-        }//end of catch
-    }// The end of doPOST method
-
+        }//end of catch 
+    }//end of doPostmethod
 }

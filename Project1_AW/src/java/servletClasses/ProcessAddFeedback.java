@@ -60,14 +60,12 @@ public class ProcessAddFeedback extends HttpServlet {
             PrintWriter out = response.getWriter();
             out.println("<p class='correct infoMsg'> The data inserted successfully!!</p>");
             request.getRequestDispatcher("AddFeedback.jsp").include(request, response);
-            request.getRequestDispatcher("footer.jsp").include(request, response);
             
         } catch (Exception ex) {//here we rerturnthe smae page with informative error messaeg
             request.getRequestDispatcher("navBar.jsp").include(request, response);
             PrintWriter out = response.getWriter();
             out.println("<p class='error infoMsg'> There was an error exception meesage: " + ex + "</p>");
             request.getRequestDispatcher("AddFeedback.jsp").include(request, response);
-            request.getRequestDispatcher("footer.jsp").include(request, response);
         }//end of catch
     }// The end of doPOST method
 
@@ -76,6 +74,5 @@ public class ProcessAddFeedback extends HttpServlet {
             throws ServletException, IOException {
         request.getRequestDispatcher("navBar.jsp").include(request, response);
         request.getRequestDispatcher("AddFeedback.jsp").include(request, response);
-        request.getRequestDispatcher("footer.jsp").include(request, response);
     }// The end of doGET method
 }// End of class
