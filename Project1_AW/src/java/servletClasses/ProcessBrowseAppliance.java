@@ -34,7 +34,7 @@ public class ProcessBrowseAppliance extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        boolean isLogged = session.getAttribute("logged").equals("true");
+        boolean isLogged = session.getAttribute("logged") != null;
         if (isLogged) {
             request.getRequestDispatcher("navBar.jsp").include(request, response);
             request.getRequestDispatcher("BrowseAppliance.jsp").include(request, response);

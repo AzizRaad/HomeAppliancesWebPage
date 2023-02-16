@@ -21,7 +21,7 @@
     String isLogged(HttpServletRequest request) {
         HttpSession session = request.getSession();
         session.getAttribute("logged");
-        if(session.getAttribute("logged").equals("true"))
+        if(session.getAttribute("logged") != null)
         return "LOGOUT";
         else return "LOGIN";
     }

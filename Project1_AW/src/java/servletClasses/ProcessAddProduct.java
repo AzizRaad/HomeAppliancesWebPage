@@ -84,7 +84,7 @@ public class ProcessAddProduct extends HttpServlet {
             throws ServletException, IOException {
         
         HttpSession session = request.getSession();
-        boolean isLogged = session.getAttribute("logged").equals("true");
+        boolean isLogged = session.getAttribute("logged") != null;
         if (isLogged) {
             request.getRequestDispatcher("navBar.jsp").include(request, response);
             request.getRequestDispatcher("AddProduct.jsp").include(request, response);

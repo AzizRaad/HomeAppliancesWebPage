@@ -30,10 +30,10 @@ public class ProcessLogin extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        boolean isLogged = session.getAttribute("logged").equals("true");
+        boolean isLogged = session.getAttribute("logged") != null;
         //here we check if the user is logged and gos to login page we will log him out
         if (isLogged) {
-            session.setAttribute("logged", "false");
+            session.removeAttribute("logged");
             response.sendRedirect("/Project1_AW/login");
         } else {
             request.getRequestDispatcher("navBar.jsp").include(request, response);
