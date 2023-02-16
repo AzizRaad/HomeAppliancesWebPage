@@ -10,7 +10,7 @@
 
 <div class="tableContainer flex">
     <table>
-        
+
         <%
             try {
                 String sql = "select * from appliances";
@@ -21,19 +21,19 @@
                 if (!rs.isBeforeFirst()) { // if nothing in DB
                     out.println("<p class = 'error infoMsg'> No registration records in database! </p>");
                 } else {
-                //printing the head of the table
-                out.println("<table>");
-                out.println("<tr >");
-                out.println(" <th>ID</th>");
-                out.println("<th>Type</th>");
-                out.println(" <th>Model</th>");
-                out.println("<th>Year</th>");
-                out.println("<th>manufacturer</th>");
-                out.println("<th>description</th>");
-                out.println("<th>Count</th>");
-                out.println("<th>Price</th>");
-                out.println("<th>registration date</th>");
-                out.println("</tr>");
+                    //printing the head of the table
+                    out.println("<table>");
+                    out.println("<tr >");
+                    out.println(" <th>ID</th>");
+                    out.println("<th>Type</th>");
+                    out.println(" <th>Model</th>");
+                    out.println("<th>Year</th>");
+                    out.println("<th>manufacturer</th>");
+                    out.println("<th>description</th>");
+                    out.println("<th>Count</th>");
+                    out.println("<th>Price</th>");
+                    out.println("<th>registration date</th>");
+                    out.println("</tr>");
                     while (rs.next()) {
                         //create table to display data
                         out.println("<tr>");
@@ -50,10 +50,11 @@
                     }
                 }
                 connection.close();
+                statement.close();
             } catch (Exception ex) {
                 out.println("<p class='error infoMsg'> There was an error exception meesage: " + ex + "</p>");
             } finally {
-                
+
                 out.close();
             }
 

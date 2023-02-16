@@ -243,10 +243,10 @@ function validateRegister() {
     }
 
     // here we check the validity of the password
-    if (!passwordInput.value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,15}$/)) {
+    if (!passwordInput.value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,25}$/)) {
         isValid = false;
         passwordMsg.innerHTML =
-                "ERROR: Provide a correct password with at least 8 characters that contains at least one capital letter and one small letter and a digit";
+                "ERROR: Provide a correct password with at least 8 characters that contains at least one capital letter and one small letter and a digit and maximum 25 characters";
         passwordMsg.style.display = "inline";
     } else {
         passwordMsg.innerHTML = "";

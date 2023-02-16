@@ -40,9 +40,10 @@ public class ProcessRegister extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         boolean isLogged = session.getAttribute("logged").equals("true");
+        //here we check if the user is logged and gos to login page we will log him out
         if (isLogged) {
             session.setAttribute("logged", "false");
-            response.sendRedirect("/Project1_AW/");
+            response.sendRedirect("/Project1_AW/login");
         } else {
             request.getRequestDispatcher("navBar.jsp").include(request, response);
             request.getRequestDispatcher("register.jsp").include(request, response);
@@ -62,7 +63,7 @@ public class ProcessRegister extends HttpServlet {
             throws ServletException, IOException {
         String fullName = request.getParameter("fullName");
         String email = request.getParameter("email");
-        String password = request.getParameter("password");
+        String password = Utility.getMd5(request.getParameter("password"));
         
         try {
             //create the blank SQL statment
@@ -97,6 +98,8 @@ public class ProcessRegister extends HttpServlet {
                 out.println("<p class='error infoMsg'> There is already a user registred with this email</p>");
                 request.getRequestDispatcher("register.jsp").include(request, response);
             }
+            connection.close();
+            statement.close();
 
         } catch (Exception ex) {//here we rerturnthe smae page with informative error messaeg
             request.getRequestDispatcher("navBar.jsp").include(request, response);

@@ -64,16 +64,15 @@ public class ProcessAddProduct extends HttpServlet {
             statement.setString(7, pricePerUnit);
 
             statement.execute();
-
             connection.close();
             statement.close();
             //here we return the same page with inforamtive message
             request.getRequestDispatcher("navBar.jsp").include(request, response);
             PrintWriter out = response.getWriter();
-            out.println("<p class='correct infoMsg'> The data inserted successfully!!</p>");
+            out.println("<p class='correct infoMsg'>The data inserted successfully!!</p>");
             request.getRequestDispatcher("AddProduct.jsp").include(request, response);
             
-        } catch (Exception ex) {//here we rerturnthe smae page with informative error messaeg
+        } catch (Exception ex) {//here we rerturn the smae page with informative error messaege
             request.getRequestDispatcher("navBar.jsp").include(request, response);
             PrintWriter out = response.getWriter();
             out.println("<p class='error infoMsg'> There was an error exception meesage: " + ex + "</p>");
